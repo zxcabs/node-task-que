@@ -1,5 +1,5 @@
 {
-	"name": "task-que",
+	"name": "node-task-que",
 	"version": "0.0.1",
 	"engines" : [ "node >=0.4" ],
 	"author": "Evgeny Reznichenko <kusakyky@gmaill.com>",
