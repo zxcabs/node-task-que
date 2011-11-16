@@ -1,7 +1,7 @@
 {
 	"name": "node-task-que",
 	"version": "0.0.2",
-	"engines" : { "node": "0.6" },
+	"engines" : [ "node>=0.4" ],
 	"author": "Evgeny Reznichenko <kusakyky@gmaill.com>",
 	"repository": "https://github.com/zxcabs/task-que",
 	"dependencies": {
