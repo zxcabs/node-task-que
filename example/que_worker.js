@@ -5,10 +5,10 @@ var que1 = new TaskQue('app1');
 
 setTimeout(function () {
 	console.log('push to que');
-	var t;
+	var t, t0;
 	
 	debugger;
-	que1.task('email', { address: 'da2@da.ru' }).save();
+	t0 = que1.task('email', { address: 'da2@da.ru' }).save();
 	que1.task('email', { address: 'da3@da.ru' }).save();
 	que1.task('email', { address: 'da4@da.ru' }).save();
 	que1.task('email', { address: 'da5@da.ru' }).save();
@@ -24,8 +24,12 @@ setTimeout(function () {
 	que1.task('pdf', { address: 'pdf6' }).save();
 	que1.task('pdf', { address: 'pdf7' }).save();
 	t = que1.task('email', { address: 'da@da.ru' }).save(function (err) {
-		console.log('Add task: %s, error: %s', t, err);
-		que1.quit();
+		console.log('Add task: %s, error: %s', t.id, err);
+		t0.done('nice mail!');
+		t.remove(function (err) {
+			console.log('remove task: %s, error: %s', t.id, err);
+			que1.quit();
+		});
 	});
 }, 3000);
 
