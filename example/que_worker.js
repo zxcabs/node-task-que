@@ -11,7 +11,12 @@ setTimeout(function () {
 	t0 = que1.task('email', { address: 'da2@da.ru' }).save();
 	que1.task('email', { address: 'da3@da.ru' }).save();
 	que1.task('email', { address: 'da4@da.ru' }).save();
-	que1.task('email', { address: 'da5@da.ru' }).save();
+	que1.task('email', { address: 'da5@da.ru' }).save(function () {
+		que1.shift('email', function (err, task) {
+			//TODO task -> task.id
+			console.log('shift email que task: %s, error: %s', task, err);
+		});
+	});
 	que1.task('email', { address: 'da6@da.ru' }).save();
 	que1.task('email', { address: 'da7@da.ru' }).save();
 	que1.task('email', { address: 'da8@da.ru' }).save();
