@@ -27,7 +27,12 @@ setTimeout(function () {
 	que1.task('pdf', { address: 'pdf4' }).save();
 	que1.task('pdf', { address: 'pdf5' }).save();
 	que1.task('pdf', { address: 'pdf6' }).save();
-	que1.task('pdf', { address: 'pdf7' }).save();
+	que1.task('pdf', { address: 'pdf7' }).save(function () {
+		que1.shift('pdf', 2, function (err, task) {
+			//TODO task -> task.id
+			console.log('shift pdf que task: %s, error: %s', task, err);
+		});
+	});
 	t = que1.task('email', { address: 'da@da.ru' }).save(function (err) {
 		console.log('Add task: %s, error: %s', t.id, err);
 		t0.done('nice mail!');
