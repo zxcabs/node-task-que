@@ -6,7 +6,6 @@
 	"repository": "https://github.com/zxcabs/task-que",
 	"dependencies": {
 		"hiredis": "0.1",
-		"redis": "0.7",
-		"async": "0.1"
+		"redis": "0.7"
 	}
 }
