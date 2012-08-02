@@ -4,8 +4,7 @@ var que1 = new TaskQue('app1');
 
 function emailHandler(task) {
 	console.log('APP1: get email: ' + task.data.address);
-	
-	debugger;
+
 	setTimeout(function () {
 		task.done(function (err) {
 			console.log('APP1: done email: %s - error: %s', task.data.address, err);
