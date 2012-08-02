@@ -7,7 +7,7 @@ var que2 = new TaskQue('app2');
 setTimeout(function () {
 	console.log('push to que');
 	
-	//app2
+	//app1
 	que1.task('email', { address: 'da2@da.ru' }).save();
 	que1.task('email', { address: 'da3@da.ru' }).save();
 	que1.task('email', { address: 'da4@da.ru' }).save();
