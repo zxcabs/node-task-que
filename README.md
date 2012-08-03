@@ -7,7 +7,7 @@ Example:
 
 _app.js_
 
-    var TaskQue = require('../lib/TaskQue.js'),
+    var TaskQue = require('../lib/TaskQue.js').TaskQue,
         que1 = new TaskQue('app1');
 
     que1.task('email', { address: 'da2@da.ru' }).save();
@@ -21,7 +21,7 @@ _app.js_
 
 _worker10.js_ - 10 tasks
 
-    var TaskQue = require('../lib/TaskQue.js'),
+    var TaskQue = require('../lib/TaskQue.js').TaskQue,
         que1 = new TaskQue('app1');
     
     function pdfHandler(tasks) {
@@ -44,7 +44,7 @@ _worker10.js_ - 10 tasks
 
 _worker1.js_ - 1 task
 
-    var TaskQue = require('../lib/TaskQue.js'),
+    var TaskQue = require('../lib/TaskQue.js').TaskQue,
         que1 = new TaskQue('app1');
     
     function handler(task) {
